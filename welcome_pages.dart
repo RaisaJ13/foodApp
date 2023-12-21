@@ -1,9 +1,7 @@
 import 'dart:async';
-
-
 import 'package:flutter/material.dart';
 import 'package:food_app/center_part.dart';
-import 'package:food_app/signup_page.dart';
+import 'package:food_app/firstPage/first_page.dart';
 import 'package:food_app/top_part.dart';
 
 
@@ -20,8 +18,13 @@ class _WelcomePagesState extends State<WelcomePages> {
   startTimer()
   {
     Timer(const Duration(seconds: 2), () async {
-      Navigator.push(context, MaterialPageRoute(builder: (c)=>const signup()));
+      Navigator.push(context, MaterialPageRoute(builder: (c)=>const firstpage()));
     });
+  }
+  void initState() {
+    super.initState();
+
+    startTimer();
   }
   @override
   Widget build(BuildContext context)
@@ -36,11 +39,11 @@ class _WelcomePagesState extends State<WelcomePages> {
             TopPart(),
 
             Centerpart(),
-
-            //EndPart(),
           ],
         ),
+
       ),
+      backgroundColor: Colors.teal,
 
     );
   }
