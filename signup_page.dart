@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:food_app/secondPages/end_part.dart';
 import 'my_button.dart';
 
 class signup extends StatefulWidget{
@@ -67,13 +67,23 @@ class _signupState extends State<signup> {
                      Text("Log in"),
                    ],
                  ),
+
                ],
+              ),
+              Column(
+                children : [
+                  BackButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (c)=>const EndPart()));
+                    },
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ),
-
+      backgroundColor: Colors.teal,
     );
   }
 }
